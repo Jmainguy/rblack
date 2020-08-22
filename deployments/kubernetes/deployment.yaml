@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rblack
+  namespace: rblack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rblack
+  template:
+    metadata:
+      labels:
+        app: rblack
+    spec:
+      containers:
+        - name: rblack
+          image: 'hub.soh.re/rblack:v0.0.1'
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          env:
+          - name: NODELABEL
+            value: node-role.kubernetes.io/compute=true
+          resources:
+            limits:
+              cpu: "1"
+              memory: 1Gi
+            requests:
+              cpu: 200m
+              memory: 200Mi

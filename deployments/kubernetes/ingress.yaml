@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: rblack
+  namespace: rblack
+spec:
+  rules:
+  - host: rblack.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: rblack
+          servicePort: 8080
