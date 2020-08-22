@@ -1,5 +1,5 @@
 # rblack
-A golang app, to servec a static web page, of Rebecca Black's hit single, Friday
+A golang app, to serve a static web page, of Rebecca Black's hit single, Friday
 ## Deploy
 ### Kubernetes
 ```/bin/bash
